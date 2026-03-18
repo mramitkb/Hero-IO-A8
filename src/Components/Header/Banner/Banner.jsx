@@ -22,18 +22,18 @@ export default function Banner() {
       <div className="flex items-center justify-center gap-5">
         <Link
           to="https://play.google.com/store/apps?hl=en"
-          className="flex items-center gap-2 btn w-fit"
+          className="flex items-center gap-2 btn w-fit bg-white hover:border-[#7A43E9] hover:border"
           target="_blank"
         >
-          <img src={playStore} className="w-8" alt="" />
+          <img src={playStore} className="w-6" alt="" />
           <span> Google Play</span>
         </Link>
         <Link
           to="https://www.apple.com/app-store/"
-          className="flex items-center gap-2 btn w-fit"
+          className="flex items-center gap-2 btn w-fit bg-white hover:border-[#7A43E9] hover:border"
           target="_blank"
         >
-          <img src={appStore} className="w-8" alt="" />
+          <img src={appStore} className="w-6" alt="" />
           <span> App Store</span>
         </Link>
       </div>
