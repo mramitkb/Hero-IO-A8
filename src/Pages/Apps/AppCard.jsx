@@ -4,9 +4,9 @@ import ratingLogo from "../../assets/ratings.png";
 import { Link } from "react-router";
 
 const AppCard = ({ app }) => {
-  const {id, image, title, downloads, ratingAvg } = app;
+  const { id, image, title, downloads, ratingAvg } = app;
   return (
-    <Link to={`/appDetails/${id}`}>
+    <Link to={`/appDetails/${id}`} className="cursor-pointer transition-transform duration-700 hover:scale-105">
       <div className="bg-white p-5 rounded-lg shadow-lg space-y-3">
         <div>
           <img className="rounded-lg object-cover" src={image} alt="" />
