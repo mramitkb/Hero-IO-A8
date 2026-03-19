@@ -1,30 +1,31 @@
 import React from "react";
 import {
-  BarChart,
+    Area,
   Bar,
+  CartesianGrid,
+  ComposedChart,
+  Legend,
+  Line,
+  ResponsiveContainer,
+  Tooltip,
   XAxis,
   YAxis,
-  Tooltip,
-  ResponsiveContainer,
 } from "recharts";
-const data = [
-  { name: "A", uv: 400 },
-  { name: "B", uv: 300 },
-  { name: "C", uv: 200 },
-];
 
-const AppChart = () => {
+const AppChart = ({ ratings }) => {
   return (
-    <div>
-      <ResponsiveContainer width="100%" height={200}>
-        <BarChart layout="vertical" data={data}>
-          <XAxis type="number" />
-          <YAxis type="category" dataKey="name" />
-
+    <div className="h-80">
+      <ResponsiveContainer>
+        <ComposedChart layout="vertical" data={ratings}>
+          <CartesianGrid stroke="#f5f5f5" />
+          <XAxis type="number" axisLine={false} tickLine={false}/>
+          <YAxis dataKey="name" type="category" scale="auto" reversed axisLine={false} tickLine={false}/>
+          {/* <Legend /> */}
           <Tooltip />
-
-          <Bar dataKey="uv" fill="#FF8811" animationDuration={800} />
-        </BarChart>
+          {/* <Area type="monotone" dataKey="name" fill="#8884d8" stroke="#8884d8"/> */}
+          <Bar dataKey="count" barSize={20} fill="#FF8811"/>
+    {/* <Line type="monotone" dataKey="name" stroke="#ff7300"/> */}
+        </ComposedChart>
       </ResponsiveContainer>
     </div>
   );

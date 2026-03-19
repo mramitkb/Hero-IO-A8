@@ -10,9 +10,9 @@ import {
 import { FaXTwitter } from "react-icons/fa6";
 const Footer = () => {
   return (
-    <div className="bg-neutral text-neutral-content p-10 md:p-20">
+    <div className="bg-neutral text-neutral-content p-10">
       <footer className="footer sm:footer-horizontal w-11/12 mx-auto">
-        <div className="w-full flex items-center justify-center">
+        <div className="w-full flex flex-col items-start justify-center">
           <Link to="/" className="flex items-center justify-center gap-1">
             <img className="w-12" src={logo} alt="" />
             <h1 className="text-2xl font-bold bg-linear-to-r from-[#6F38E6] to-[#985CF0] bg-clip-text text-transparent">
@@ -85,7 +85,7 @@ const Footer = () => {
           </div>
         </form>
       </footer>
-      <hr className=" my-10 border-gray-600 border-dashed"/>
+      <hr className=" my-5 border-gray-600 border-dashed"/>
       <p className="text-[12px] text-center text-gray-300"> <span className="bg-linear-to-r from-[#6F38E6] to-[#985CF0] bg-clip-text text-transparent font-semibold">HERO.IO</span> &copy; {new Date().getFullYear()} - All Right Reserved.</p>
     </div>
   );
