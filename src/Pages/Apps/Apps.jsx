@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 import AppCard from "./AppCard";
+import AppNotFound from "../AppNotFound";
 
 export default function Apps() {
-  const apps = useLoaderData();
+    const [search, setSearch] = useState("");
+    const apps = useLoaderData();
+
+    const allApps = apps.filter(app => app.title.toLowerCase().includes(search.toLowerCase()));
+
+    const handleSearch = (e) => {
+        const searchType = e.target.value;
+        setSearch(searchType);
+    }
+
   return (
     <div className="bg-[#F5F5F5] py-12">
       <div className="w-11/12 mx-auto">
@@ -15,7 +25,7 @@ export default function Apps() {
           </p>
         </div>
         <div className="flex items-center justify-between mt-10">
-          <h1 className="font-semibold">({apps.length}) Apps Found</h1>
+          <h1 className="font-semibold">({allApps.length}) Apps Found</h1>
           <div>
             <label className="input">
               <svg
@@ -34,16 +44,21 @@ export default function Apps() {
                   <path d="m21 21-4.3-4.3"></path>
                 </g>
               </svg>
-              <input type="search" required placeholder="Search Apps" />
+              <input onChange={handleSearch} type="search" required placeholder="Search Apps" />
             </label>
           </div>
         </div>
-
+        {
+            allApps.length === 0 ? 
+            <AppNotFound></AppNotFound>
+            :
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-6">
             {
-                apps.map(app => <AppCard app={app} key={app.id}></AppCard>)
+                allApps.map(app => <AppCard app={app} key={app.id}></AppCard>)
             }
         </div>
+        
+}
       </div>
     </div>
   );
