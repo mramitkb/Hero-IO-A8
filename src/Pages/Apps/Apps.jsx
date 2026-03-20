@@ -2,16 +2,28 @@ import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 import AppCard from "./AppCard";
 import AppNotFound from "../AppNotFound";
+import Loading from "../Loading";
 
 export default function Apps() {
-    const [search, setSearch] = useState("");
+    const [searchApps, setSearchApps] = useState("");
+    const [loading, setLoading] = useState(false);
+    
     const apps = useLoaderData();
-
-    const allApps = apps.filter(app => app.title.toLowerCase().includes(search.toLowerCase()));
-
+    
+    const allApps = apps.filter(app => app.title.toLowerCase().includes(searchApps.toLowerCase()));
+    
     const handleSearch = (e) => {
-        const searchType = e.target.value;
-        setSearch(searchType);
+        
+        const searchByTitle = e.target.value;
+        setLoading(true)
+
+        clearTimeout(window.searchTimeout);
+
+        window.searchTimeout = setTimeout(() => {
+            setSearchApps(searchByTitle);
+            setLoading(false);
+        }, 400)
+        
     }
 
   return (
@@ -47,6 +59,11 @@ export default function Apps() {
               <input onChange={handleSearch} type="search" required placeholder="Search Apps" />
             </label>
           </div>
+        </div>
+        <div>
+            {
+                loading && <Loading></Loading>
+            }
         </div>
         {
             allApps.length === 0 ? 

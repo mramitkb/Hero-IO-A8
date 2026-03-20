@@ -5,9 +5,10 @@ import ratingsLogo from "../../assets/ratings.png";
 import reviewLogo from "../../assets/review.png";
 import AppChart from "./AppChart";
 import { addAppsToDB, getAppsFromDB } from "../../Database/localStorage";
+import Swal from "sweetalert2";
 
 const AppDetails = () => {
-    const [installedApps, setInstalledApps] = useState(getAppsFromDB());
+    const [installedApps, setInstalledApps] = useState(() => getAppsFromDB());
     const { id } = useParams();
     const apps = useLoaderData();
     
@@ -23,6 +24,12 @@ const AppDetails = () => {
 
       const storedApps = getAppsFromDB();
         setInstalledApps(storedApps);
+
+        Swal.fire({
+  title: `<p><span style="color:#7039E6;">${title}</span> installed successfully!</p>`,
+  icon: "success",
+  draggable: true
+});
       
   };
   return (
