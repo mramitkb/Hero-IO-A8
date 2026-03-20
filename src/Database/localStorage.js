@@ -12,4 +12,10 @@ const addAppsToDB = (id) => {
     }
 }
 
-export {getAppsFromDB, addAppsToDB};
+const removeAppsFromDB = (id) => {
+    const storedApps = getAppsFromDB();
+
+    const updateApps = storedApps.filter(appsId => appsId !== id);
+    localStorage.setItem("apps", JSON.stringify(updateApps))
+}
+export {getAppsFromDB, addAppsToDB, removeAppsFromDB};
