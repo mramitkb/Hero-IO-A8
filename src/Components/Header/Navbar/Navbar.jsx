@@ -5,9 +5,9 @@ import { FaGithub } from "react-icons/fa";
 
 const Navbar = () => {
     const navLinks = <>
-            <NavLink to="/" className={({isActive}) => isActive ? "bg-linear-to-r from-[#6F38E6] to-[#985CF0] bg-clip-text text-transparent font-semibold underline underline-offset-2": ""}>Home</NavLink>
-            <NavLink to="/apps" className={({isActive}) => isActive ? "bg-linear-to-r from-[#6F38E6] to-[#985CF0] bg-clip-text text-transparent font-semibold underline underline-offset-2": ""}>Apps</NavLink>
-            <NavLink to="/installation" className={({isActive}) => isActive ? "bg-linear-to-r from-[#6F38E6] to-[#985CF0] bg-clip-text text-transparent font-semibold underline underline-offset-2": ""}>Installation</NavLink>
+            <NavLink to="/" className={({isActive}) => isActive ? "bg-linear-to-r from-[#6F38E6] to-[#985CF0] bg-clip-text text-transparent font-semibold underline underline-offset-4": ""}>Home</NavLink>
+            <NavLink to="/apps" className={({isActive}) => isActive ? "bg-linear-to-r from-[#6F38E6] to-[#985CF0] bg-clip-text text-transparent font-semibold underline underline-offset-4": ""}>Apps</NavLink>
+            <NavLink to="/installation" className={({isActive}) => isActive ? "bg-linear-to-r from-[#6F38E6] to-[#985CF0] bg-clip-text text-transparent font-semibold underline underline-offset-4": ""}>Installation</NavLink>
     </>
   return (
     <div className="bg-base-100 shadow-sm">
@@ -39,12 +39,12 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/" className="flex items-center justify-center gap-1">
-            <img className="w-10 md:w-12" src={logo} alt="" />
-            <h1 className="text-xl md:text-2xl font-bold bg-linear-to-r from-[#6F38E6] to-[#985CF0] bg-clip-text text-transparent">HERO.IO</h1>
+            <img className="w-8 md:w-10" src={logo} alt="" />
+            <h1 className="text-xl md:text-2xl font-bold bg-linear-to-r from-[#6F38E6] to-[#985CF0] bg-clip-text text-transparent">StoreFlow</h1>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 gap-3 [&_a.active]:bg-linear-to-r [&_a.active]:from-[#6F38E6] [&_a.active]:to-[#985CF0] [&_a.active]:bg-clip-text [&_a.active]:text-transparent [&_a.active]:font-semibold [&_a.active]:underline [&_a.active]:underline-offset-2">
+          <ul className="menu menu-horizontal px-1 gap-3 [&_a.active]:bg-linear-to-r [&_a.active]:from-[#6F38E6] [&_a.active]:to-[#985CF0] [&_a.active]:bg-clip-text [&_a.active]:text-transparent [&_a.active]:font-semibold [&_a.active]:underline [&_a.active]:underline-offset-4">
             <NavLink to="/">Home</NavLink>
             <NavLink to="/apps">Apps</NavLink>
             <NavLink to="/installation">Installation</NavLink>

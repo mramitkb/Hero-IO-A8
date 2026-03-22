@@ -12,13 +12,14 @@ const Footer = () => {
   return (
     <div className="bg-neutral text-neutral-content p-10">
       <footer className="footer sm:footer-horizontal w-11/12 mx-auto">
-        <div className="w-full flex flex-col items-start justify-center">
+        <div className="w-full flex flex-col items-start justify-center space-y-2">
           <Link to="/" className="flex items-center justify-center gap-1">
-            <img className="w-12" src={logo} alt="" />
+            <img className="w-8 md:w-10" src={logo} alt="" />
             <h1 className="text-2xl font-bold bg-linear-to-r from-[#6F38E6] to-[#985CF0] bg-clip-text text-transparent">
-              HERO.IO
+              StoreFlow
             </h1>
           </Link>
+          <p className="text-center text-[#a0abb4]">"Building smart, productive apps for our clients. Turning ideas into powerful digital solutions."</p>
         </div>
         <div>
           <h1 className="footer-title text-base">LEGAL</h1>
@@ -56,7 +57,7 @@ const Footer = () => {
             <label>Enter Your Email</label>
             <div className="join mt-2">
               <input
-                type="text"
+                type="email"
                 placeholder="Your Email"
                 className="input input-bordered join-item text-black outline-none border-none"
               />
@@ -86,7 +87,7 @@ const Footer = () => {
         </form>
       </footer>
       <hr className=" my-5 border-gray-600 border-dashed"/>
-      <p className="text-[12px] text-center text-gray-300"> <span className="bg-linear-to-r from-[#6F38E6] to-[#985CF0] bg-clip-text text-transparent font-semibold">HERO.IO</span> &copy; {new Date().getFullYear()} - All Right Reserved.</p>
+      <p className="text-[12px] text-center text-gray-300"> <span className="bg-linear-to-r from-[#6F38E6] to-[#985CF0] bg-clip-text text-transparent font-semibold">StoreFlow</span> &copy; {new Date().getFullYear()} - All Right Reserved.</p>
     </div>
   );
 };

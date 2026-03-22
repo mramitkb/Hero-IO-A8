@@ -1,6 +1,6 @@
-# App Name: Hero IO
+# App Name: StoreFlow
 
-**Hero IO** is a modern web platform that enables the creation and management of custom applications as a service.  
+**StoreFlow** is a modern web platform that enables the creation and management of custom applications as a service.  
 Built with a robust React.js frontend, it delivers a seamless user experience with responsive design, interactive components, and efficient API integration.
 
 ---
