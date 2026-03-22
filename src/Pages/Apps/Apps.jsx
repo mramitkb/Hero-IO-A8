@@ -10,7 +10,7 @@ export default function Apps() {
     
     const apps = useLoaderData();
     
-    const allApps = apps.filter(app => app.title.toLowerCase().includes(searchApps.toLowerCase()));
+    const allApps = apps.filter(app => app.title.toLowerCase().includes(searchApps.trim().toLowerCase()));
     
     const handleSearch = (e) => {
         
